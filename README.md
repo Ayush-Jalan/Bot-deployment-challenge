@@ -23,4 +23,4 @@ This bot alerts every time when a new bot is deployed from Nethermind address
 
 The bot behaviour can be verified with the following transactions:
 
-- [0x906bab9359843c22f35d12fbe8c08cf76311de356d1fff77265ab70e0e3a89da] (https://polygonscan.com/tx/0x906bab9359843c22f35d12fbe8c08cf76311de356d1fff77265ab70e0e3a89da)
+- [0x906bab9359843c22f35d12fbe8c08cf76311de356d1fff77265ab70e0e3a89da](https://polygonscan.com/tx/0x906bab9359843c22f35d12fbe8c08cf76311de356d1fff77265ab70e0e3a89da)
