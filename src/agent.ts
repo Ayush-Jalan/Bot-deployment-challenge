@@ -1,12 +1,7 @@
 import { Finding, HandleTransaction, TransactionEvent, FindingSeverity, FindingType } from "forta-agent";
+import { AGENT_CREATED_FUNCTION, NETHERMIND_ADDRESS, CONTRACT_ADDRESS } from "./uitls";
 
-export const AGENT_CREATED_FUNCTION =
-  "function createAgent(uint256 agentId, address owner, string metadata, uint256[] chainIds) public";
-export const NETHERMIND_ADDRESS = "0x88dc3a2284fa62e0027d6d6b1fcfdd2141a143b8";
-export const CONTRACT_ADDRESS = "0x61447385B019187daa48e91c55c02AF1F1f3F863";
-let findingsCount = 0;
-
-export const provideHandleTransaction = (): HandleTransaction => {
+export const provideHandleTransaction = (deployer: string, contract: string, abi: string): HandleTransaction => {
   return async (txEvent: TransactionEvent): Promise<Finding[]> => {
     const findings: Finding[] = [];
 
@@ -14,7 +9,7 @@ export const provideHandleTransaction = (): HandleTransaction => {
 
     createAgentFunctions.forEach((createdAgent) => {
       const { agentId, owner, metadata, chainIds } = createdAgent.args;
-      if (owner.toString().toLowerCase() === NETHERMIND_ADDRESS.toLowerCase()) {
+      if (owner.toLowerCase() === NETHERMIND_ADDRESS.toLowerCase()) {
         findings.push(
           Finding.fromObject({
             name: "Bot deployed",
@@ -36,5 +31,5 @@ export const provideHandleTransaction = (): HandleTransaction => {
 };
 
 export default {
-  handleTransaction: provideHandleTransaction(),
+  handleTransaction: provideHandleTransaction(NETHERMIND_ADDRESS, CONTRACT_ADDRESS, AGENT_CREATED_FUNCTION),
 };

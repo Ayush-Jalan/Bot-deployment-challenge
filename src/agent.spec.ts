@@ -1,5 +1,6 @@
-import { FindingType, FindingSeverity, Finding, HandleTransaction, TransactionEvent, ethers } from "forta-agent";
-import { provideHandleTransaction, AGENT_CREATED_FUNCTION, CONTRACT_ADDRESS, NETHERMIND_ADDRESS } from "./agent";
+import { FindingType, FindingSeverity, Finding, HandleTransaction} from "forta-agent";
+import { provideHandleTransaction} from "./agent";
+import { AGENT_CREATED_FUNCTION, NETHERMIND_ADDRESS, CONTRACT_ADDRESS } from "./uitls";
 import { TestTransactionEvent } from "forta-agent-tools/lib/test";
 import { createAddress } from "forta-agent-tools";
 import { Interface } from "@ethersproject/abi";
@@ -41,7 +42,7 @@ describe("Bots deployment", () => {
   let txEvent: TestTransactionEvent;
 
   beforeAll(() => {
-    handleTransaction = provideHandleTransaction();
+    handleTransaction = provideHandleTransaction(NETHERMIND_ADDRESS, CONTRACT_ADDRESS, AGENT_CREATED_FUNCTION);
   });
 
   it("returns empty findings if there are no bots deployed", async () => {

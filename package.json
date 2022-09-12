@@ -5,6 +5,8 @@
   "chainIds": [
     137
   ],
+  "repository": "https://github.com/Ayush-Jalan/Bot-deployment-challenge",
+
   "scripts": {
     "build": "tsc",
     "start": "npm run start:dev",
@@ -25,12 +27,12 @@
     "test": "jest"
   },
   "dependencies": {
-    "forta-agent": "^0.1.9",
-    "forta-agent-tools": "^3.0.0"
+    "forta-agent": "^0.1.9"
   },
   "devDependencies": {
     "@types/jest": "^27.0.1",
     "@types/nodemon": "^1.19.0",
+    "forta-agent-tools": "^3.0.0",
     "jest": "^27.0.6",
     "nodemon": "^2.0.8",
     "prettier": "^2.7.1",
