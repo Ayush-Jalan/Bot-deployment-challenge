@@ -15,9 +15,9 @@ This bot alerts every time when a new bot is deployed from Nethermind address
   - Severity is always set to "info" 
   - Type is always set to "info" 
   - Metadata contains:
-  agentId : agentId of the bot
-  metadata : metadata of the bot
-  chainIds : chainIds of the bot
+  - agentId : agentId of the bot
+  - metadata : metadata of the bot
+  - chainIds : chainIds of the bot
 
 ## Test Data
 
