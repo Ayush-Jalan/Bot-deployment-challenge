@@ -1,5 +1,5 @@
 import { Finding, HandleTransaction, TransactionEvent, FindingSeverity, FindingType } from "forta-agent";
-import { AGENT_CREATED_FUNCTION, NETHERMIND_ADDRESS, REGISTRY_ADDRESS } from "./uitls";
+import { AGENT_CREATED_FUNCTION, NETHERMIND_ADDRESS, REGISTRY_ADDRESS } from "./utils";
 
 export const provideHandleTransaction = (deployer: string, registry: string, abi: string): HandleTransaction => {
   return async (txEvent: TransactionEvent): Promise<Finding[]> => {

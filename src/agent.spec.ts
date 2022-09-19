@@ -1,6 +1,6 @@
-import { FindingType, FindingSeverity, Finding, HandleTransaction } from "forta-agent";
-import { provideHandleTransaction } from "./agent";
-import { AGENT_CREATED_FUNCTION } from "./uitls";
+import { FindingType, FindingSeverity, Finding, HandleTransaction} from "forta-agent";
+import { provideHandleTransaction} from "./agent";
+import { AGENT_CREATED_FUNCTION} from "./utils";
 import { TestTransactionEvent } from "forta-agent-tools/lib/test";
 import { createAddress } from "forta-agent-tools";
 import { Interface } from "@ethersproject/abi";
